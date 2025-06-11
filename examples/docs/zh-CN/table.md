@@ -1420,7 +1420,7 @@
 
 表头支持自定义。
 
-:::demo 通过设置 [Scoped slot](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD) 来自定义表头。
+:::demo 通过设置 [Scoped slot](https://v2.cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD) 来自定义表头。
 ```html
 <template>
   <el-table
@@ -1860,6 +1860,7 @@
 | fit | 列的宽度是否自撑开 | boolean | — | true |
 | show-header | 是否显示表头 | boolean | — | true |
 | highlight-current-row | 是否要高亮当前行 | boolean | — | false |
+| highlight-selection-row | 是否要高亮复选框选中行（仅针对开启 `selection` 有效） | boolean | — | false |
 | current-row-key | 当前行的 key，只写属性 | String,Number | — | — |
 | row-class-name | 行的 className 的回调方法，也可以使用字符串为所有行设置一个固定的 className。 | Function({row, rowIndex})/String | — | — |
 | row-style | 行的 style 的回调方法，也可以使用一个固定的 Object 为所有行设置一样的 Style。 | Function({row, rowIndex})/Object | — | — |

@@ -1089,7 +1089,7 @@ Vous pouvez filtrer la table pour obtenir rapidement les lignes désirées.
 
 Vous pouvez customiser le contenu des colonnes afin de pouvoir utiliser d'autres composants.
 
-:::demo Vous avez acccès aux données suivantes: `row`, `column`, `$index` et `store` (gestionnaire d'état de Table) grâce aux [Scoped slot](https://vuejs.org/v2/guide/components.html#Scoped-Slots).
+:::demo Vous avez acccès aux données suivantes: `row`, `column`, `$index` et `store` (gestionnaire d'état de Table) grâce aux [Scoped slot](https://v2.vuejs.org/v2/guide/components-slots#Scoped-Slots).
 ```html
 <template>
   <el-table
@@ -1171,7 +1171,7 @@ Vous pouvez customiser le contenu des colonnes afin de pouvoir utiliser d'autres
 
 Vous pouvez également personnaliser le header de la table.
 
-:::demo Vous pouvez personnaliser le header grâce aux [slots avec portée](https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots).
+:::demo Vous pouvez personnaliser le header grâce aux [slots avec portée](https://v2.vuejs.org/v2/guide/components-slots#Scoped-Slots).
 ```html
 <template>
   <el-table
@@ -1824,6 +1824,7 @@ Vous pouvez personnaliser les indices des colonnes de type `index`.
 | fit | Si la largeur des colonnes s'adapte au conteneur. | boolean | — | true |
 | show-header | Si le header de la table est visible. | boolean | — | true |
 | highlight-current-row | Si la ligne courante est mise en valeur. | boolean | — | false |
+| highlight-selection-row | Sélectionner la ligne à cocher en surbrillance | boolean | — | false |
 | current-row-key | Clé de la ligne actuelle. Propriété set-only. | string,number | — | — |
 | row-class-name | Fonction qui retourne un nom de classe pour chaque ligne. Peut aussi être une simple chaîne de caractères assignant une classe à chaque ligne. | Function({row, rowIndex})/String | — | — |
 | row-style | Fonction qui retourne un style pour chaque ligne. Peut aussi être un objet assignant un style à chaque ligne. | Function({row, rowIndex})/Object | — | — |
