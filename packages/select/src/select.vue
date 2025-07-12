@@ -303,7 +303,7 @@
       collapseTags: Boolean,
       popperAppendToBody: {
         type: Boolean,
-        default: true
+        default: false
       }
     },
 
@@ -867,6 +867,15 @@
     },
 
     mounted() {
+      // 添加对Dialog遮罩层点击的监听
+      this.$nextTick(() => {
+        const dialogWrappers = window.top.document.querySelectorAll('.el-dialog__wrapper');
+        dialogWrappers.forEach(wrapper => {
+          wrapper.addEventListener('click', (e) => {
+            this.visible = false;
+          });
+        });
+      });
       if (this.multiple && Array.isArray(this.value) && this.value.length > 0) {
         this.currentPlaceholder = '';
       }

@@ -66,21 +66,23 @@
               class="date-class"
       >
       </el-date-picker>
-      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
-
-      <iframe src="http://localhost:8085/#/" frameborder="0"></iframe>
-      <el-dialog
-        title="提示"
-        :visible.sync="dialogVisible"
-        :appendToIframeParent="true"
-        width="30%"
-        :before-close="handleClose">
-        <span>这是一段信息</span>
+    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+    <el-dialog title="提示" :visible.sync="dialogVisible" :appendToIframeParent="true" width="30%">
+        <div class="block">
+            <span class="demonstration">调整每页显示条数</span>
+            <el-pagination :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="sizes, prev, pager, next"
+                :total="1000">
+            </el-pagination>
+        </div>
         <span slot="footer" class="dialog-footer">
-          <el-button @click="dialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            <el-button @click="dialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
         </span>
-      </el-dialog>
+    </el-dialog>
+    <el-select v-model="selectValue" placeholder="请选择">
+        <el-option v-for="item in opts" :key="item.value" :label="item.label" :value="item.value">
+        </el-option>
+    </el-select>
     </div>
   </div>
 </template>
@@ -94,6 +96,21 @@
         name: "NavTime",
         data() {
             return {
+            selectValue: "",
+            opts: [
+            {
+                value: "1",
+                label: "选项1"
+            },
+            {
+                value: "2",
+                label: "选项2"
+            },
+            {
+                value: "3",
+                label: "选项3"
+            }
+            ],
               dialogVisible: false,
                 time: "day",
                 newDate: ["2023-02-01","2023-02-03"],
