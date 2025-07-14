@@ -66,6 +66,25 @@
               class="date-class"
       >
       </el-date-picker>
+            <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+
+      <iframe src="http://localhost:8085/#/" frameborder="0"></iframe>
+      <el-dialog
+        title="提示"
+        :visible.sync="dialogVisible"
+        :appendToIframeParent="true"
+        width="30%">
+    <el-pagination
+      :page-sizes="[100, 200, 300, 400]"
+      :page-size="100"
+      layout="sizes, prev, pager, next"
+      :total="1000">
+    </el-pagination>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
   </div>
 </template>
@@ -79,6 +98,7 @@
         name: "NavTime",
         data() {
             return {
+                dialogVisible: false,
                 time: "day",
                 newDate: ["2023-02-01","2023-02-03"],
                 pickerOptions: {
