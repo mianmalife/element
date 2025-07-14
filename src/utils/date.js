@@ -276,9 +276,11 @@
     if (index > -1) {
       if (num == 1) {
         mask = mask.substring(0, index + 1);
+        mask = mask.replace('年第', '-').replace('周', '')
         num++;
       } else {
         mask = mask.substring(index + 1, mask.length);
+        mask = mask.replace('年第', '-').replace('周', '')
         num = 1;
       }
     }
