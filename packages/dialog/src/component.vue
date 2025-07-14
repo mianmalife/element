@@ -206,7 +206,7 @@
         this.rendered = true;
         this.open();
         if (this.appendToIframeParent) {
-          window.top.document.body.appendChild((this.$el));
+          window.top.document.body.appendChild(this.$el);
         } else {
           if (this.appendToBody) {
             document.body.appendChild(this.$el);
